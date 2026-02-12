@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "deploy:prod": "wrangler deploy --env production"
+    "deploy": "wrangler deploy"
   },
   "keywords": ["telegram", "bot", "cloudflare", "workers"],
   "author": "",
