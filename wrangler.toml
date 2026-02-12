@@ -10,6 +10,29 @@ name = "telegram-bot-prod"
 [[env.production.vars]]
 # TELEGRAM_BOT_TOKEN будет установлен через wrangler secret
 
+# D1 База данных
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "lexi_main_db"
+database_id = "848ff033-2d6c-4b3d-9727-1941c73d3295"
+
+# KV хранилище
+[[env.production.kv_namespaces]]
+binding = "KV"
+id = "b23c34a9e4a348dc965ee2264f7a1275"
+
+# Queues
+[[env.production.queues.producers]]
+binding = "MY_QUEUE"
+queue = "87679d08e77e4a909c174e7da2268039"
+
+[[env.production.queues.consumers]]
+queue = "87679d08e77e4a909c174e7da2268039"
+max_batch_size = 10
+max_batch_timeout = 30
+max_retries = 3
+dead_letter_queue = "87679d08e77e4a909c174e7da2268039-dlq"
+
 # Локальное окружение для разработки
 [env.development]
 name = "telegram-bot-dev"
